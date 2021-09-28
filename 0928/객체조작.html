@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체조작</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .txt, .html{
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h2>요소(문서객체)를 추가, 삭제, 변경</h2>
+    <p class="txt">text</p>
+    <p class="html">html</p>
+    <script>
+        //요소에 text를 읽기
+        var t = $('.txt').text();
+        document.write('t= ', t);
+
+        // .txt의 text 변경
+        $('.txt').text('<em>새로운 텍스트</em>');
+
+        // 요소에 html을 추가
+        $('.html').html('<em>새로운 html</em>');
+    </script>
+
+    
+</body>
+</html>

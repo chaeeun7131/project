@@ -1,0 +1,58 @@
+/* style.css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    width: 1200px;
+    /* outline: 1px solid #000; */
+    margin: 0 auto;
+}
+#location .breadcrumb{
+    text-align: right;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+}
+#location .tltle {
+    padding-bottom: 36px;
+    border-bottom: 1px solid #ccc;
+}
+#location .tltle h2{
+    font-size: 35px;
+}
+#location .title p{
+    font-size: 18px;
+}
+.location-contents{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.tab-group{
+    background: #ccc;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.tab-group .btn{
+    width: calc(1200px / 4);
+    border: 1px solid #ccc;
+    display: block;
+    float: left;
+    padding: 20px;
+}
+.tab-group .btn{
+    border-right-style: none;
+}
+.tab-group .btn.active{
+  background: #2167af;
+  color: #fff;
+}
+.tab-group .btn:last-child{
+    border-right-style: solid;
+}
+#map{
+    width: 1200px;
+    height: 500px;
+    background: #999;
+}

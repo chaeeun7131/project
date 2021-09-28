@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrollTop</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+        }
+        #s1{
+            background: lightgreen;
+            height: 100vh;
+        }
+        #s2{
+            background: lightblue;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <section id="s1">
+        <h1>section</h1>
+    </section>
+    <section id="s2">
+        <h1>section 2</h1>
+    </section>
+
+    <script>
+        var scrollTop = $(window).scrollTop();
+        console.log(scrollTop);
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수치조작메소드.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body{
+          margin: 0px;  
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            padding: 40px;
+            box-sizing: border-box;
+            position: absolute;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        box1
+    </div>
+    <script>
+        // 박스의 크기를 읽기 width(),height() - 콘텐츠 영역의 크기만 측정
+        var width = $('.box1').width();
+        document.write('box1 width= ',width)
+
+        // 여백까지 크기 측정
+        var innerWidth =$('.box1').width();
+        document.write('<br>box1 width = ',width)
+
+
+        // 박스의 크기를 변경
+        // $('.box1').width(200);
+        // $('.box1').height(200);
+
+        // position().left, position().top  요소의 위치
+        var left = $('.box1').position().left;
+        document.write('<br>left= ', left);
+
+        // offset().left, offset().top
+        var offsetLeft = $('.box1').offset().left;
+        document.write('<br>offsetLeft= ', offsetLeft)
+    </script>
+    
+</body>
+</html>

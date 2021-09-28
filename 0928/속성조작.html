@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성조작</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .border{
+            border: 2px solid red;
+        }
+        .border2{
+            border: 2px dotted blue;
+        }
+        .active{
+            color: red;
+        }
+        section{
+            padding: 10px;
+            background: #ccc;
+        }
+        .box1{
+            width: 300px;
+            height: 300px;
+            background: #ccc;
+            font-size: 2em;
+            overflow: hidden;
+        }
+        .bg-green{
+            background: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <img
+    class="img1"
+    src="https://via.placeholder.com/350?text=hello" alt="hello">
+
+    <script>
+        //attr('속성명') 읽기
+        var imgSrc = $('.img1').attr('src');
+        document.write('<br>imgSrc= ', imgSrc);
+        //alt 속성값 읽기
+        var imgAlt =$('.img1').attr('alt');
+        document.write('<br>imgAlt= ', imgAlt);
+
+        // 이미지 변경 attr('속성명', '값')
+        $('.img1').attr('src', 'https://via.placeholder.com/250?text=changed-img');
+
+        //removeAttr('속성명') 클래스명 제거
+        $('.img1').removeClass('border');
+
+        // addClass('값') 클래스명 추가
+        $('.img1').addClass('border2');
+
+
+    </script>
+
+    <ul id="list">
+        <li>home</li>
+        <li>company</li>
+        <li>product</li>
+        <li>about</li>
+    </ul>
+
+    <script>
+        $('#list li').eq(1).addClass('active');
+    </script>
+
+    <h2>attr 연습</h2>
+    <section>
+        <img src="https://via.placeholder.com/300/f00?text=1" alt="1">
+        <img src="https://via.placeholder.com/300/80f?text=2" alt="2">
+    </section>
+
+    <script>
+        // 첫번째 이미지와 두번째 이미지의 src 속성 값을 반대로 변경
+        // 힌트 attr() 읽고 쓰는 기능
+        // 결과 2 : 1
+        function changeImg(){
+        // 1. 속성값 읽기
+        var img1 = $('section img').first().attr('src');
+        console.log(img1)
+        var img2 = $('section img').last().attr('src');
+        console.log(img2)
+        // 2. 속성값 쓰기
+        // img2에 img1을 쓰고, img1에 img2를 씀
+        $('section img').last().attr('src',img1);
+        $('section img').first().attr('src',img2);
+        }
+    </script>
+
+    <button id="btn1" onclick="changeImg();">이미지 바꾸기</button>
+    
+    <h2>addClass, removeClass, toggleClass</h2>
+    <div class="box1">addClass, removeClass, toggleClass</div>
+    <button class="btn-add" onclick="bgOn();">addClass</button>
+    <button class="btn-remove" onclick="bgOff();">removeClass</button>
+    <button class="btn-toggle" onclick="bgToggle();">toggleClass</button>
+
+    <script>
+         function bgToggle(){
+        $('.box1').toggleClass('bg-green');
+        }
+
+        function bgOn(){
+        // box1에 .bg-green class를 추가
+        $('.box1').addClass('bg-green');
+        }
+
+        // bgOff() .bg-green class 제거
+        function bgOff(){
+        $('.box1').removeClass('bg-green');
+        }
+    </script>
+
+        이름: <input type="text" name="user" id="user" value="" oninput="myFunc();">
+        <button id="btn">확인</button>
+
+        <script>
+            function myFunc(){
+                var value = $('#user').val();
+                console.log(value);
+            }
+            // val() 입력값 읽고 쓰기
+            //var user = $('#user').val();
+            // alert(user);
+            //$('#user').val('자바스크립트');
+        </script>
+   
+
+
+</body>
+</html>
